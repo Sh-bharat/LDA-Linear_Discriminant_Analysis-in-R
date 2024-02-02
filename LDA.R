@@ -15,8 +15,8 @@ data_mean<-c()
 for (i in 1:ncol(data)){data_mean<-c(data_mean,mean(data[,i]))}
 
 #Calculating between class variance 
-S_theta1<-ncol(C1)*(as.matrix(c1_mean-data_mean)%*%t(c1_mean-data_mean))
-S_theta2<-ncol(C2)*(as.matrix(c2_mean-data_mean)%*%t(c2_mean-data_mean))
+S_theta1<-nrow(C1)*(as.matrix(c1_mean-data_mean)%*%t(c1_mean-data_mean))
+S_theta2<-nrow(C2)*(as.matrix(c2_mean-data_mean)%*%t(c2_mean-data_mean))
 S_theta<-S_theta1+S_theta2
 
 #Calculating within class variance 
